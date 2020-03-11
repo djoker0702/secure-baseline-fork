@@ -11,7 +11,7 @@ locals {
 # --------------------------------------------------------------------------------------------------
 
 module "iam_baseline" {
-  source = "git::git@github.com:nozaq/terraform-aws-secure-baseline.git//modules/iam-baseline"
+  source = "https://github.com/nozaq/terraform-aws-secure-baseline.git//modules/iam-baseline"
 
   aws_account_id                  = var.aws_account_id
   master_iam_role_name            = var.master_iam_role_name
@@ -38,7 +38,7 @@ module "iam_baseline" {
 # --------------------------------------------------------------------------------------------------
 
 module "cloudtrail_baseline" {
-  source = "git::git@github.com:nozaq/terraform-aws-secure-baseline.git//modules/cloudtrail-baseline"
+  source = "https://github.com/nozaq/terraform-aws-secure-baseline.git//modules/cloudtrail-baseline"
 
   enabled                           = local.is_cloudtrail_enabled
   aws_account_id                    = var.aws_account_id
@@ -61,7 +61,7 @@ module "cloudtrail_baseline" {
 # --------------------------------------------------------------------------------------------------
 
 module "alarm_baseline" {
-  source = "git::git@github.com:nozaq/terraform-aws-secure-baseline.git//modules/alarm-baseline"
+  source = "https://github.com/nozaq/terraform-aws-secure-baseline.git//modules/alarm-baseline"
 
   enabled                   = local.is_cloudtrail_enabled
   alarm_namespace           = var.alarm_namespace
@@ -76,5 +76,5 @@ module "alarm_baseline" {
 # --------------------------------------------------------------------------------------------------
 
 module "securityhub_baseline" {
-  source = "git::git@github.com:nozaq/terraform-aws-secure-baseline.git//modules/securityhub-baseline"
+  source = "https://github.com/nozaq/terraform-aws-secure-baseline.git//modules/securityhub-baseline"
 }
