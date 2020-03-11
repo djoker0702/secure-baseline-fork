@@ -26,7 +26,7 @@ data "aws_s3_bucket" "external" {
 # https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html
 # --------------------------------------------------------------------------------------------------
 module "audit_log_bucket" {
-  source = "https://github.com/nozaq/terraform-aws-secure-baseline.git//modules/secure-bucket"
+  source = "github.com/nozaq/terraform-aws-secure-baseline//modules/secure-bucket?ref=0.17.0"
 
   bucket_name                       = var.audit_log_bucket_name
   log_bucket_name                   = "${var.audit_log_bucket_name}-access-logs"
